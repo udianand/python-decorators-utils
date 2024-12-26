@@ -6,7 +6,6 @@ description = "A collection of useful Python decorators including timing and cac
 authors = [{"name" = "Udit Anand", "email" = "getuditanand@gmail.com"}]
 readme = "README.md"
 requires-python = ">=3.11"
-packages = [{include = "Decorators"}]
 dependencies = []
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -15,5 +14,8 @@ classifiers = [
 ]
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["Decorators*"]
