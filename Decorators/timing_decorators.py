@@ -1,6 +1,7 @@
 import time
+from typing import Callable
 
-def timing_decorator(func: callable):
+def timing_decorator(func: Callable)->Callable:
   
   def wrapper(*args, **kwargs):
     
