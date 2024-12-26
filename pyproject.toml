@@ -1,7 +1,7 @@
 
 [project]
 name = "python_decorators_utils"
-version = "0.1.0"
+version = "0.1.2"
 description = "A collection of useful Python decorators including timing and caching"
 authors = [{"name" = "Udit Anand", "email" = "getuditanand@gmail.com"}]
 readme = "README.md"
