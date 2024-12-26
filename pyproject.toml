@@ -1,12 +1,12 @@
 
 [project]
-name = "python-decorators-utils"
+name = "python_decorators_utils"
 version = "0.1.0"
 description = "A collection of useful Python decorators including timing and caching"
 authors = [{"name" = "Udit Anand", "email" = "getuditanand@gmail.com"}]
 readme = "README.md"
 requires-python = ">=3.11"
-packages = ["Decorators"]
+packages = [{include = "Decorators"}]
 dependencies = []
 classifiers = [
     "Programming Language :: Python :: 3",
