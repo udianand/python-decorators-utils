@@ -6,6 +6,8 @@ description = "A collection of useful Python decorators including timing and cac
 authors = [{"name" = "Udit Anand", "email" = "getuditanand@gmail.com"}]
 readme = "README.md"
 requires-python = ">=3.11"
+packages = ["Decorators"]
+dependencies = []
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
