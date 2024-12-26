@@ -3,7 +3,7 @@
 name = "python-decorators-utils"
 version = "0.1.0"
 description = "A collection of useful Python decorators including timing and caching"
-authors = [{"name" = "Your Name", "email" = "you@example.com"}]
+authors = [{"name" = "Udit Anand", "email" = "getuditanand@gmail.com"}]
 readme = "README.md"
 requires-python = ">=3.11"
 classifiers = [
