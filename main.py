@@ -1,6 +1,10 @@
+from timing_decorators import timing_decorator
+import time
 
-def main():
-    print("Hello from main.py!")
+@timing_decorator
+def slow_function():
+  time.sleep(2)
+  print("I am slow")
 
 if __name__ == "__main__":
-    main()
+    slow_function()
