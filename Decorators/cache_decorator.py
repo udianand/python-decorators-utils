@@ -1,10 +1,12 @@
-from typing import Callable
 
-def cache_decorator(func: Callable) -> Callable:
-  cache = {}
+from typing import Callable, Dict, TypeVar, Any, Tuple
 
-  def wrapper(*args: int) -> int:
+T = TypeVar('T')
 
+def cache_decorator(func: Callable[..., T]) -> Callable[..., T]:
+  cache: Dict[Tuple[Any, ...], T] = {}
+
+  def wrapper(*args: Any) -> T:
     if args in cache:
       print(f"Cache hit for {args}")
       return cache[args]
