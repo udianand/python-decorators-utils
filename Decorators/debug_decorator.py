@@ -7,6 +7,6 @@ def debug_decorator(func: Callable) -> Callable:
         print(
             f"Function {func.__name__} called with arguments {args} and keywargs {kwargs}"
         )
-        return func(*args, **kwargs)
-
+        result = func(*args, **kwargs)
+        print(f"Returned: {result}")
     return wrapper
