@@ -1,5 +1,6 @@
 
-from Decorators import timing_decorator, cache_decorator
+from Decorators import timing_decorator, cache_decorator, execution_counter
+
 import time
 
 @timing_decorator
@@ -13,6 +14,10 @@ def fibonacci(n):
         return n
     return fibonacci(n-1) + fibonacci(n-2)
 
+@execution_counter
+def greet(name):
+    print(f"Hello, {name}")
+
 if __name__ == "__main__":
     # Test timing decorator
     print("\nTesting timing decorator:")
@@ -23,3 +28,9 @@ if __name__ == "__main__":
     print(f"fibonacci(5) = {fibonacci(5)}")
     print("Calling again (should hit cache):")
     print(f"fibonacci(5) = {fibonacci(5)}")
+
+    # Test function execution decorator
+    print("\nTesting function execution decorator:")
+    greet("Alice")
+    greet("Bob")
+    
