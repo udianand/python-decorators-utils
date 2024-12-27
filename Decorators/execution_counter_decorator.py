@@ -1,16 +1,13 @@
+
+import functools
 from typing import Callable, Any
 
-
-from functools import wraps
-
-def execution_counter(func: Callable) -> Callable:
-    count = 0
-
-    @wraps(func)
+def execution_counter(func: Callable[..., Any]) -> Callable[..., Any]:
+    @functools.wraps(func)
     def wrapper(*args: Any, **kwargs: Any) -> Any:
-        nonlocal count
-        count += 1
-        print(f"Function {func.__name__} called {count} times")
+        wrapper.count += 1
         return func(*args, **kwargs)
-
+    
+    wrapper.count = 0
+    wrapper.get_count = lambda: wrapper.count
     return wrapper

@@ -1,4 +1,5 @@
 from typing import Callable, Dict, TypeVar, Any, Tuple
+import functools
 
 T = TypeVar("T")
 
