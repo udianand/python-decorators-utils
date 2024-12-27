@@ -1,4 +1,4 @@
-from typing import Callable
+from typing import Callable,Any
 import time
 
 
@@ -6,7 +6,7 @@ def retry_decorator(max_retries: int) -> Callable:
 
   def decorator(func: Callable) -> Callable:
 
-    def wrapper(*args, **kwargs):
+    def wrapper(*args:Any, **kwargs:Any)->Any:
       retries = max_retries
       while retries > 0:
         try:

@@ -1,9 +1,9 @@
 import time
-from typing import Callable
+from typing import Callable,Any
 
 def timing_decorator(func: Callable)->Callable:
   
-  def wrapper(*args, **kwargs):
+  def wrapper(*args:Any, **kwargs:Any)->Any:
     
     start_time = time.time()
     result = func(*args, **kwargs)
