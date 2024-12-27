@@ -1,3 +1,4 @@
+
 from typing import Callable
 
 
@@ -14,3 +15,5 @@ def retry_decorator(max_retries: int) -> Callable:
           retries -= 1
           if retries == 0:
             raise e
+    return wrapper
+  return decorator
