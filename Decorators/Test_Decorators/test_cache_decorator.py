@@ -4,18 +4,19 @@ from Decorators.cache_decorator import cache_decorator
 
 class TestCacheDecorator(unittest.TestCase):
     def test_cache_hit(self):
-        # Test function to be cached
+        self.calls = 0
+        
         @cache_decorator
         def add(x, y):
+            self.calls += 1
             return x + y
 
-        # First call - should cache result
         result1 = add(2, 3)
-        # Second call - should use cached result
         result2 = add(2, 3)
 
         self.assertEqual(result1, 5)
         self.assertEqual(result2, 5)
+        self.assertEqual(self.calls, 1)  # Function should only be called once
 
     def test_different_args(self):
         # Test function with different arguments
