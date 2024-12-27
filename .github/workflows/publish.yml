@@ -2,9 +2,8 @@
 name: python-decorators-utils
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'
+  release:
+    types: [created]
 
 jobs:
   publish:
