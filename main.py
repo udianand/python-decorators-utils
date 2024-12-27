@@ -1,5 +1,6 @@
 
-from Decorators import timing_decorator, cache_decorator, execution_counter
+from Decorators import timing_decorator, cache_decorator
+from Decorators.execution_counter import execution_counter
 
 import time
 
