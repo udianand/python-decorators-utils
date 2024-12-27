@@ -22,7 +22,7 @@ def greet(name:str)->None:
     print(f"Hello, {name}")
 
 @retry_decorator(max_retries=3)
-def divide(a, b):
+def divide(a: float, b: float) -> float:
     return a / b
     
 if __name__ == "__main__":
