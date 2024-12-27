@@ -1,23 +1,23 @@
-from typing import Callable, Any
+
+from typing import Callable, TypeVar, Any
+import functools
 import time
 
+T = TypeVar("T")
 
-def retry_decorator(max_retries: int) -> Callable:
-
-    def decorator(func: Callable) -> Callable:
-
-        def wrapper(*args: Any, **kwargs: Any) -> Any:
-            retries = max_retries
-            while retries > 0:
+def retry_decorator(max_retries: int = 3, delay: float = 1.0) -> Callable:
+    def decorator(func: Callable[..., T]) -> Callable[..., T]:
+        @functools.wraps(func)
+        def wrapper(*args: Any, **kwargs: Any) -> T:
+            attempts = 0
+            while attempts < max_retries:
                 try:
                     return func(*args, **kwargs)
                 except Exception as e:
-                    retries -= 1
-                    print(f"Retrying {retries} retries left")
-                    time.sleep(1)
-                    if retries == 0:
+                    attempts += 1
+                    if attempts == max_retries:
                         raise e
-
+                    time.sleep(delay)
+            return func(*args, **kwargs)  # Final attempt
         return wrapper
-
     return decorator
