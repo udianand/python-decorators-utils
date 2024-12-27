@@ -4,6 +4,7 @@ from typing import Callable, Any
 
 def timing_decorator(func: Callable) -> Callable:
 
+    @functools.wraps(func)
     def wrapper(*args: Any, **kwargs: Any) -> Any:
 
         start_time = time.time()
