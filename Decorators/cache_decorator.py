@@ -4,6 +4,7 @@ from typing import Callable, Dict, TypeVar, Any, Tuple
 T = TypeVar('T')
 
 def cache_decorator(func: Callable[..., T]) -> Callable[..., T]:
+  
   cache: Dict[Tuple[Any, ...], T] = {}
 
   def wrapper(*args: Any) -> T:
