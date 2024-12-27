@@ -10,4 +10,5 @@ def debug_decorator(func: Callable) -> Callable:
         )
         result = func(*args, **kwargs)
         print(f"Returned: {result}")
+        return result
     return wrapper
