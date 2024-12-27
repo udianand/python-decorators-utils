@@ -1,0 +1,53 @@
+Testing timing decorator:
+Function example_timing took 1.0001 seconds to run
+
+Testing cache decorator with Fibonacci:
+Function wrapper called with arguments (5,) and keywargs {}
+Function wrapper called with arguments (4,) and keywargs {}
+Function wrapper called with arguments (3,) and keywargs {}
+Function wrapper called with arguments (2,) and keywargs {}
+Function wrapper called with arguments (1,) and keywargs {}
+Returned: 1
+Function wrapper called with arguments (0,) and keywargs {}
+Returned: 0
+Traceback (most recent call last):
+  File "/home/runner/python-decorators-utils/main.py", line 41, in <module>
+    print(f"fibonacci(5) = {fibonacci(5)}")
+                            ^^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/Decorators/debug_decorator.py", line 11, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/Decorators/cache_decorator.py", line 15, in wrapper
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/main.py", line 19, in fibonacci
+    return fibonacci(n - 1) + fibonacci(n - 2)
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/Decorators/debug_decorator.py", line 11, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/Decorators/cache_decorator.py", line 15, in wrapper
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/main.py", line 19, in fibonacci
+    return fibonacci(n - 1) + fibonacci(n - 2)
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/Decorators/debug_decorator.py", line 11, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/Decorators/cache_decorator.py", line 15, in wrapper
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/main.py", line 19, in fibonacci
+    return fibonacci(n - 1) + fibonacci(n - 2)
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/Decorators/debug_decorator.py", line 11, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/Decorators/cache_decorator.py", line 15, in wrapper
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/home/runner/python-decorators-utils/main.py", line 19, in fibonacci
+    return fibonacci(n - 1) + fibonacci(n - 2)
+           ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
