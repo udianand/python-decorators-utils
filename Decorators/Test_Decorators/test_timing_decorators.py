@@ -1,7 +1,7 @@
 
 import unittest
 import time
-from timing_decorators import timing_decorator
+from Decorators.timing_decorators import timing_decorator
 
 class TestTimingDecorator(unittest.TestCase):
     def test_timing_decorator_basic(self):

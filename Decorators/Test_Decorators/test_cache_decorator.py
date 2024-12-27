@@ -1,6 +1,6 @@
 
 import unittest
-from ..cache_decorator import cache_decorator
+from Decorators.cache_decorator import cache_decorator
 
 class TestCacheDecorator(unittest.TestCase):
     def test_cache_hit(self):
