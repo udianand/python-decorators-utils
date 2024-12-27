@@ -43,9 +43,5 @@ if __name__ == "__main__":
 
     # Test retry decorator
     print("\nTesting retry decorator:")
-    try:
-        print(divide(10, 0))
-    except Exception as e:
-        print(f"Error: {e}")
-    
+    print(divide(10, 0))
     
