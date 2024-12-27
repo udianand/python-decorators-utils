@@ -7,7 +7,7 @@ from Decorators.retry_decorator import retry_decorator
 import time
 
 @timing_decorator
-def example_timing():
+def example_timing()->str:
     time.sleep(1)
     return "Timing decorator test complete"
 
