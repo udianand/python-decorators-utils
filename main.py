@@ -12,13 +12,13 @@ def example_timing():
     return "Timing decorator test complete"
 
 @cache_decorator
-def fibonacci(n):
+def fibonacci(n:int)->int:
     if n < 2:
         return n
     return fibonacci(n-1) + fibonacci(n-2)
 
 @execution_counter
-def greet(name):
+def greet(name:str)->None:
     print(f"Hello, {name}")
 
 @retry_decorator(max_retries=3)

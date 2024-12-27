@@ -1,4 +1,6 @@
-def cache_decorator(func):
+from typing import Callable
+
+def cache_decorator(func:Callable)->Callable:
   cache = {}
   
   def wrapper(*args, **kwargs):
