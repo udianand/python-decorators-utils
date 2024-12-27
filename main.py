@@ -1,6 +1,8 @@
 
 from Decorators import timing_decorator, cache_decorator
-from Decorators.execution_counter import execution_counter
+from Decorators.execution_counter_decorator import execution_counter
+from Decorators.retry_decorator import retry_decorator
+
 
 import time
 
@@ -19,6 +21,10 @@ def fibonacci(n):
 def greet(name):
     print(f"Hello, {name}")
 
+@retry_decorator(max_retries=3)
+def divide(a, b):
+    return a / b
+    
 if __name__ == "__main__":
     # Test timing decorator
     print("\nTesting timing decorator:")
@@ -34,4 +40,12 @@ if __name__ == "__main__":
     print("\nTesting function execution decorator:")
     greet("Alice")
     greet("Bob")
+
+    # Test retry decorator
+    print("\nTesting retry decorator:")
+    try:
+        print(divide(10, 0))
+    except Exception as e:
+        print(f"Error: {e}")
+    
     
